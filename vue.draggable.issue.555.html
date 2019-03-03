@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.3/Sortable.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.19.0/vuedraggable.umd.min.js"></script>
+    <style scoped>
+        .list-item {
+          border: dotted rgba(0,0,0,1) 1px;
+          border-radius: 3px;
+        }
+        .ghost {
+          color: rgba(0,0,255,1.0);
+          background: rgba(255,0,0,1.0)
+        }
+    </style>      
+</head>
+
+<body>
+    <main id="app-main">
+        <draggable :list="list" ghostClass="ghost">
+            <div class="list-item" v-for="element in list" :key="element.name">
+                {{ element.name }}
+            </div>
+        </draggable>
+    </main>
+</body>
+
+<script>
+  var app = new Vue({
+    el: '#app-main',
+    data: function() {
+      return {
+        list: [
+          { name: "11111", id: 1 },
+          { name: "22222", id: 2 },
+          { name: "33333", id: 3 }
+        ]
+      };
+    }
+  });
+</script>
+
+</html>
