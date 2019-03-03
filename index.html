@@ -18,7 +18,7 @@
 
 <body>
     <main id="app-main">
-        <draggable :list="list" ghostClass="ghost">
+        <draggable :list="list" ghostClass="ghost" ghost-class="ghost">
             <div class="list-item" v-for="element in list" :key="element.name">
                 {{ element.name }}
             </div>
